@@ -1,7 +1,5 @@
 # Pom Dependency Analyzer
 [![Build Status](https://travis-ci.org/tomasbjerre/pom-dependency-analyzer.svg?branch=master)](https://travis-ci.org/tomasbjerre/pom-dependency-analyzer)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.bjurr.pomdependencyanalyzer/pom-dependency-analyzer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/se.bjurr.pomdependencyanalyzer/pom-dependency-analyzer)
-[![Bintray](https://api.bintray.com/packages/tomasbjerre/tomasbjerre/se.bjurr.pomdependencyanalyzer%3Apom-dependency-analyzer/images/download.svg) ](https://bintray.com/tomasbjerre/tomasbjerre/se.bjurr.pomdependencyanalyzer%3Apom-dependency-analyzer/_latestVersion)
 
 This is a command line tool that parses the `dot` output of `mvn dependency:tree` and manages a set of `json`-files with its findings. The output can be used with [Pom Dependency Analyzer Web](https://github.com/tomasbjerre/pom-dependency-analyzer-web) to create a browsable webpage.
 
