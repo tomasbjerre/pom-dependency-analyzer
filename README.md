@@ -14,7 +14,7 @@ Example (change to whatever pom-file you want to examine):
 ```shell
 POM_FILE=~/.m2/repository/se/bjurr/violations/violations-maven-plugin/1.19/violations-maven-plugin-1.19.pom \
  && mvn dependency:tree -DoutputType=dot -Doutput=$POM_FILE.dot -f $POM_FILE \
- && ./pom-dependency-analyzer -d $POM_FILE.dot
+ && ./gradlew run --args="-d $POM_FILE.dot"
 ```
 
 Or all `pom`:s in a specific folder:
@@ -22,7 +22,7 @@ Or all `pom`:s in a specific folder:
 find ~/.m2/repository/se/bjurr -type f -name "*.pom" \
  | xargs -I % sh -c '([ ! -e %.dot ] || grep -Fq "\-SNAPSHOT" %) \
  && mvn dependency:tree -DoutputType=dot -Doutput=%.dot -f % \
- && ./pom-dependency-analyzer -d %.dot \
+ && ./gradlew run --args="-d %.dot" \
  && echo $(find ~/.m2 -name "*.pom.dot" | wc -l)/$(find ~/.m2 -name "*.pom" | wc -l)\
  || echo Skipping: %'
 ```
