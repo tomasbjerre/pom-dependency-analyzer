@@ -3,6 +3,15 @@
 
 Changelog of Pom dependency analyzer.
 
+## 1.2
+### No issue
+
+**Always create dependencies.json**
+
+
+[62411a425ace165](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/62411a425ace165) Tomas Bjerre *2019-05-30 12:09:45*
+
+
 ## 1.1
 ### No issue
 
