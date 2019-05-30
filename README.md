@@ -1,5 +1,6 @@
 # Pom Dependency Analyzer
 [![Build Status](https://travis-ci.org/tomasbjerre/pom-dependency-analyzer.svg?branch=master)](https://travis-ci.org/tomasbjerre/pom-dependency-analyzer)
+[![NPM](https://img.shields.io/npm/v/pom-dependency-analyzer.svg?style=flat-square) ](https://www.npmjs.com/package/pom-dependency-analyzer)
 
 This is a command line tool that parses the `dot` output of `mvn dependency:tree` and manages a set of `json`-files with its findings. The output can be used with [Pom Dependency Analyzer Web](https://github.com/tomasbjerre/pom-dependency-analyzer-web) to create a browsable webpage.
 
@@ -12,15 +13,17 @@ Example (change to whatever pom-file you want to examine):
 ```shell
 POM_FILE=~/.m2/repository/se/bjurr/violations/violations-maven-plugin/1.19/violations-maven-plugin-1.19.pom \
  && mvn dependency:tree -DoutputType=dot -Doutput=$POM_FILE.dot -f $POM_FILE \
- && ./gradlew run --args="-d $POM_FILE.dot"
+ && npx pom-dependency-analyzer -d $POM_FILE.dot
 ```
+
+You can also run from this repo with `/gradlew run --args="-d $POM_FILE.dot"`.
 
 Or all `pom`:s in a specific folder:
 ```shell
 find ~/.m2/repository/se/bjurr -type f -name "*.pom" \
  | xargs -I % sh -c '([ ! -e %.dot ] || grep -Fq "\-SNAPSHOT" %) \
  && mvn dependency:tree -DoutputType=dot -Doutput=%.dot -f % \
- && ./gradlew run --args="-d %.dot" \
+ && npx pom-dependency-analyzer -d %.dot \
  && echo $(find ~/.m2 -name "*.pom.dot" | wc -l)/$(find ~/.m2 -name "*.pom" | wc -l)\
  || echo Skipping: %'
 ```

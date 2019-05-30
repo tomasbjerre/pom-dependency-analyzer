@@ -1,0 +1,20 @@
+{
+  "bin": {"pom-dependency-analyzer": "jdeploy-bundle/jdeploy.js"},
+  "author": "Tomas Bjerre",
+  "description": "Command line tool for generating a changelog, or releasenotes, from a GIT repository.",
+  "keywords": [
+    "changelog",
+    "releasenotes"
+  ],
+  "homepage": "https://github.com/tomasbjerre/pom-dependency-analyzer",
+  "repository": "git@github.com:tomasbjerre/pom-dependency-analyzer.git",
+  "main": "index.js",
+  "preferGlobal": true,
+  "version": "VERSION.0",
+  "jdeploy": {"jar": "build/libs/pom-dependency-analyzer-VERSION.jar"},
+  "dependencies": {"shelljs": "^0.7.5"},
+  "license": "Apache 2",
+  "name": "pom-dependency-analyzer",
+  "files": ["jdeploy-bundle"],
+  "scripts": {"test": "echo \"Error: no test specified\" && exit 1"}
+}
