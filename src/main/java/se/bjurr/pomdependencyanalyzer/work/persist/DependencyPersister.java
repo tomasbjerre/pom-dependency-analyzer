@@ -74,6 +74,10 @@ public class DependencyPersister {
       // So that we can always look at parsed.json to get the details, for any artifact.
       write(GSON.toJson(dep), depFolderPath, PARSED_JSON);
     }
+    if (!depFolderPath.resolve(DEPENDENCIES_JSON).toFile().exists()) {
+      // So that we can always look at dependencies.
+      write(GSON.toJson(new ArrayList<>()), depFolderPath, DEPENDENCIES_JSON);
+    }
   }
 
   private void removeDependent(final Dependency dep, final Dependency parsed) {
