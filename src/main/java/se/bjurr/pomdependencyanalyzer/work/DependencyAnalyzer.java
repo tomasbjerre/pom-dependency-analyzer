@@ -17,6 +17,9 @@ public class DependencyAnalyzer {
             PomAnalyzerArguments.INSTANCE.getDotFile(),
             PomAnalyzerArguments.INSTANCE.isCreateImage());
     final ResolvedDependencies resolvedDependencies = dependencyGraph.getResolvedDependencies();
+    if (resolvedDependencies.getDependencies().isEmpty()) {
+      return;
+    }
     final String storageFolder = PomAnalyzerArguments.INSTANCE.getStorageFolder();
     final List<Metadata> metadataList = PomAnalyzerArguments.INSTANCE.getMetadataList();
     final DependencyPersister persister =

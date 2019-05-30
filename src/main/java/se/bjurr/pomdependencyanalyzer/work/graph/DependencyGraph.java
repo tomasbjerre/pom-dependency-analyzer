@@ -83,14 +83,15 @@ public class DependencyGraph {
       if (createImage) {
         createImage(graph);
       }
-      return toSet(graph);
+      return toResolvedDependencies(graph);
     } catch (final Throwable t) {
       System.out.println("Could not parse:\n\n" + dotContent + "\n\n");
       throw t;
     }
   }
 
-  private ResolvedDependencies toSet(final Graph<DependencyVertex, DependencyEdge> graph) {
+  private ResolvedDependencies toResolvedDependencies(
+      final Graph<DependencyVertex, DependencyEdge> graph) {
     final Set<Dependency> list = new TreeSet<>();
     final Iterator<DependencyVertex> iterator = new DepthFirstIterator<>(graph);
     Dependency parsed = null;
