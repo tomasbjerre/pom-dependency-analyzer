@@ -3,6 +3,15 @@
 
 Changelog of Pom dependency analyzer.
 
+## 1.1
+### No issue
+
+**Handling zero dependencies**
+
+
+[3235ef74982ce28](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/3235ef74982ce28) Tomas Bjerre *2019-05-30 10:07:03*
+
+
 ## 1.0
 ### No issue
 
