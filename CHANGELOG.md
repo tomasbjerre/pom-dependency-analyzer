@@ -3,13 +3,23 @@
 
 Changelog of Pom dependency analyzer.
 
-## Unreleased
+## 1.0
 ### No issue
 
-**first**
+**NPM packaging**
 
 
-[c4bf1cc39e9e7f5](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/c4bf1cc39e9e7f5) Tomas Bjerre *2019-05-03 14:58:35*
+[f9b6a7a3220407b](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/f9b6a7a3220407b) Tomas Bjerre *2019-05-30 06:36:17*
+
+**update**
+
+
+[db3b01231ee842e](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/db3b01231ee842e) Tomas Bjerre *2019-05-12 15:10:44*
+
+**update**
+
+
+[f3eeb0044e6a496](https://github.com/tomasbjerre/pom-dependency-analyzer/commit/f3eeb0044e6a496) Tomas Bjerre *2019-05-12 15:08:32*
 
 
  
