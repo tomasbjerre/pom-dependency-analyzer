@@ -1,0 +1,5 @@
+digraph "se.bjurr.violations:violation-comments-lib:jar:1.87" { 
+	"se.bjurr.violations:violation-comments-lib:jar:1.87" -> "se.bjurr.violations:violations-lib:jar:1.85:compile" ; 
+	"se.bjurr.violations:violation-comments-lib:jar:1.87" -> "org.slf4j:slf4j-api:jar:1.7.22:compile" ; 
+	"se.bjurr.violations:violation-comments-lib:jar:1.87" -> "com.github.spullara.mustache.java:compiler:jar:0.9.5:compile" ; 
+ } 
