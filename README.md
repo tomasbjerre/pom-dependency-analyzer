@@ -13,7 +13,7 @@ Example (change to whatever pom-file you want to examine):
 ```shell
 POM_FILE=~/.m2/repository/se/bjurr/violations/violations-maven-plugin/1.19/violations-maven-plugin-1.19.pom \
  && mvn dependency:tree -DoutputType=dot -Doutput=$POM_FILE.dot -f $POM_FILE \
- && npx pom-dependency-analyzer -d $POM_FILE.dot
+ && npx pom-dependency-analyzer -d $POM_FILE.dot -sf metadata/folder
 ```
 
 You can also run with java: `java -jar pom-dependency-analyzer-*.jar -d $POM_FILE.dot`.
@@ -23,12 +23,14 @@ Or all `pom`:s in a specific folder:
 find ~/.m2/repository/se/bjurr -type f -name "*.pom" \
  | xargs -I % sh -c '([ ! -e %.dot ] || grep -Fq "\-SNAPSHOT" %) \
  && mvn dependency:tree -DoutputType=dot -Doutput=%.dot -f % \
- && npx pom-dependency-analyzer -d %.dot \
+ && npx pom-dependency-analyzer -d %.dot -sf metadata/folder \
  && echo $(find ~/.m2 -name "*.pom.dot" | wc -l)/$(find ~/.m2 -name "*.pom" | wc -l)\
  || echo Skipping: %'
 ```
 
 You may use [Pom Downloader](https://github.com/tomasbjerre/pom-downloader) to download pom-files.
+
+You may use [Pom Dependency Analyzer Web](https://github.com/tomasbjerre/pom-dependency-analyzer-web) to create a browsable webpage, and REST API, from this output.
 
 # Usage
 
