@@ -2,21 +2,19 @@ package se.bjurr.pomdependencyanalyzer.work.persist;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.common.io.Files;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import se.bjurr.pomdependencyanalyzer.data.Dependency;
 import se.bjurr.pomdependencyanalyzer.data.Metadata;
 import se.bjurr.pomdependencyanalyzer.work.graph.ResolvedDependencies;
-
-import com.google.common.io.Files;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 public class DependencyPersister {
   private static final String DEPENDENTS_JSON = "dependents.json";
