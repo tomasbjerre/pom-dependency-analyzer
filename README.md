@@ -16,7 +16,7 @@ POM_FILE=~/.m2/repository/se/bjurr/violations/violations-maven-plugin/1.19/viola
  && npx pom-dependency-analyzer -d $POM_FILE.dot
 ```
 
-You can also run from this repo with `/gradlew run --args="-d $POM_FILE.dot"`.
+You can also run with java: `java -jar pom-dependency-analyzer-*.jar -d $POM_FILE.dot`.
 
 Or all `pom`:s in a specific folder:
 ```shell
