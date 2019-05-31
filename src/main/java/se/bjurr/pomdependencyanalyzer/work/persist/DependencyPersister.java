@@ -2,19 +2,21 @@ package se.bjurr.pomdependencyanalyzer.work.persist;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.common.io.Files;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
 import se.bjurr.pomdependencyanalyzer.data.Dependency;
 import se.bjurr.pomdependencyanalyzer.data.Metadata;
 import se.bjurr.pomdependencyanalyzer.work.graph.ResolvedDependencies;
+
+import com.google.common.io.Files;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 public class DependencyPersister {
   private static final String DEPENDENTS_JSON = "dependents.json";
@@ -42,12 +44,6 @@ public class DependencyPersister {
 
     write(GSON.toJson(metadataList), folderPath, METADATA_JSON);
     write(GSON.toJson(resolvedDependencies.getParsed()), folderPath, PARSED_JSON);
-
-    if (!resolvedDependencies.getParsed().getVersion().endsWith("-SNAPSHOT")
-        && folderPath.resolve(DEPENDENCIES_JSON).toFile().exists()) {
-      // Assuming only SNAPSHOT versions change
-      return;
-    }
 
     final List<Dependency> prevDependencies = getDependencies(folderPath, DEPENDENCIES_JSON);
     prevDependencies.removeAll(resolvedDependencies.getDependencies());
